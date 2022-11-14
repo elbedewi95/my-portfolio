@@ -16,11 +16,18 @@ function ContactMePage (){
         const re = /.+\@.+\..+/;
         return re.test(String(email).toLowerCase())
     };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!errorMessage) {
+            alert("Thank you for contacting me! I'll get back to your message as soon as I can!");
+            console.log("submit form", formState);
+        }
+    }
 
     return (
         <section className="paragraph">
             <h1 className="H1">Contact Me!</h1>
-            <form id="contact-form">
+            <form id="contact-form" onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name: </label><br/>
                     <input className="textbox" type="text" name="Name" defaultValue={name} onBlur={handleChange}/>
