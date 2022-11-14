@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 
 function ContactMePage (){
     const [formState, setFormState] = useState({
