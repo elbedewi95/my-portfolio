@@ -22,7 +22,8 @@ function ContactMePage (){
             alert("Thank you for contacting me! I'll get back to your message as soon as I can!");
             console.log("submit form", formState);
         }
-    }
+    };
+
 
     return (
         <section className="paragraph">
