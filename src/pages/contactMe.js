@@ -23,6 +23,26 @@ function ContactMePage (){
             console.log("submit form", formState);
         }
     };
+    const handleChange = (event) => {
+        event.preventDefault();
+        if (event.target.name === "email") {
+            const isValid = validateEmail(event.target.value);
+            if (!isValid) {
+                setErrorMessage("Your email is invalid")
+            } else {
+                setErrorMessage("")
+            }
+        } else {
+            if (!event.target.value.length) {
+                setErrorMessage(`${event.target.name} is required!`)
+            } else {
+                setErrorMessage("");
+            }
+            if(!errorMessage) {
+                setFormState({...formState, [event.target.name]: event.target.value});
+            }
+        }
+    }
 
 
     return (
