@@ -42,7 +42,7 @@ function ContactMePage (){
                 setFormState({...formState, [event.target.name]: event.target.value});
             }
         }
-    }
+    };
 
 
     return (
